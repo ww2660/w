@@ -223,22 +223,22 @@
                 scrollToSection(current - 1);
             }
         });
-          // 新增返回功能
-        function goBack() {
-            // 添加返回动画
-            document.documentElement.style.opacity = 0;
-            setTimeout(() => {
-                window.history.back();
-            }, 300);
-        }
+// 修改后的返回功能
+function goBack() {
+    // 添加返回动画
+    document.documentElement.style.opacity = 0;
+    setTimeout(() => {
+        // 直接跳转到主页面
+        window.location.href = 'index.html';
+    }, 300);
+}
 
-        // 新增键盘支持（ESC键返回）
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                goBack();
-            }
-        });
-
+// 保持原有的键盘支持（ESC键返回）
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        goBack();
+    }
+});
 
     </script>
 </body>
